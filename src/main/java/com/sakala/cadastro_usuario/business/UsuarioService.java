@@ -30,4 +30,22 @@ public class UsuarioService {
     }
 
 
+    public void deletarUsuarioPorEmail(String email){
+        repository.deleteByEmail(email);
+    }
+
+
+    public void atualizarUsuarioPorEmail(String email, Usuario usuario){
+
+        Usuario usuarioEntity = buscarUsuarioPorEmail(email);
+        Usuario usuarioAtualizado = Usuario.builder()
+
+                .email(usuario.getEmail() != null ?
+                        usuario.getEmail() : usuarioEntity.getEmail())
+
+
+                .build();
+
+
+    }
 }
