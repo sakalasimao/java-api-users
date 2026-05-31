@@ -2,17 +2,16 @@ package com.sakala.cadastro_usuario.infraestruture.entitys;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @Table(name = "usuario")
 @Entity
+
 public class Usuario {
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
@@ -21,6 +20,8 @@ public class Usuario {
     @Column(name = "email", unique = true)
     private String email;
 
-    @Column
+    @Column(name = "nome")
+    private String nome;
+
 
 }
