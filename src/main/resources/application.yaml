@@ -6,7 +6,7 @@ spring:
       enabled: true
       path: /h2-console
   datasource:
-    url: jdbc::h2:men:usuario
+    url: jdbc::h2:mem:usuario
     driver-class-name: org.h2.Driver
     username: root
     password: 1234
